@@ -20,9 +20,9 @@ pipeline {
             }
         }
 
-        stage (" Plan") {
+        stage ("Apply") {
             steps {
-                sh ('terraform plan') 
+                sh ('terraform apply') 
            }
         }
     }
