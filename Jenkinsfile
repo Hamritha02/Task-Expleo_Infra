@@ -1,26 +1,30 @@
 pipeline {
     agent any
-    tools {
-       terraform 'Terraform'
-    }
+
     stages {
-        stage('Git checkout') {
-           steps{
-                git branch: 'main', url: 'https://github.com/Hamritha02/Task-Expleo/.git'
+        stage('Checkout') {
+            steps {
+                checkout scm
             }
         }
-        stage('terraform Init') {
-            steps{
-                sh 'terraform init'
+    
+        stage ("terraform init") {
+            steps {
+                sh ("terraform init -reconfigure") 
             }
         }
         
-        stage('terraform apply') {
-            steps{
-                sh 'terraform apply --auto-approve'
+        stage ("plan") {
+            steps {
+                sh ('terraform plan') 
             }
         }
-    }
 
-    
+        stage (" Plan") {
+            steps {
+                sh ('terraform plan') 
+           }
+        }
+    }
 }
+    
