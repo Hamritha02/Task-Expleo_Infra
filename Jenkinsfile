@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Git checkout') {
            steps{
-                git branch: 'main', url: 'https://github.com/Hamritha02/Task-Expleo.git'
+                git branch: 'main', url: 'https://github.com/Hamritha02/Task-Expleo/Terraform.git'
             }
         }
         stage('terraform Init') {
