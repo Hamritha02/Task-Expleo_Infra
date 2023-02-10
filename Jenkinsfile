@@ -1,7 +1,7 @@
 pipeline {
 agent any
 tools {
-  terraform 'terraform'
+  terraform 'Terraform'
 }
 options { ansiColor('xterm') } 
  stages { 
@@ -23,7 +23,7 @@ stage ('Terraform version') {
   stage ('Terraform init') { 
   steps {
    sh '''
-   cd terraform-test/
+   cd Terraform-test/
    terraform init
    ''' 
    }
@@ -32,7 +32,7 @@ stage ('Terraform version') {
   stage ('Terraform plan') { 
   steps {
    sh '''
-   cd terraform-test/
+   cd Terraform-test/
    terraform plan -out=tfplan.out
    terraform show -json tfplan.out
    ''' 
@@ -42,7 +42,7 @@ stage ('Terraform version') {
  stage ('Terraform apply') { 
   steps {
    sh '''
-   cd terraform-test/
+   cd Terraform-test/
    terraform apply --auto-approve
    ''' 
    }
