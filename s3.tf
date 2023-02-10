@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
     bucket = "taskterra"
-    key    = "home/ubuntu/terraform/.terraform/terraform.tfstate"
+    key    = "main"
     region = "us-east-1"
-    encrypt = true
+    dynamodb_table = "my-dynamo-db-table"
   }
 }
