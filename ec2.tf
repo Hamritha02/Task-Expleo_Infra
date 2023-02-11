@@ -6,7 +6,7 @@ module "Jenkins" {
 
   ami                    = "ami-00874d747dde814fa"
   instance_type          = "t2.micro"
-  key_name               = "god1"
+  key_name               = "jen-exp"
   monitoring             = true
   vpc_security_group_ids = [module.Private_SG.security_group_id]
   subnet_id              = module.vpc.private_subnets[0]
