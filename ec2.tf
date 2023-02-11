@@ -9,7 +9,7 @@ module "Jenkins" {
   key_name               = "god1"
   monitoring             = true
   vpc_security_group_ids = [module.Private_SG.security_group_id]
-  subnet_id              = module.vpc.private_subnets[0]
+  subnet_id              = module.vpc.private_subnets
 
   tags = {
     Terraform   = "true"
