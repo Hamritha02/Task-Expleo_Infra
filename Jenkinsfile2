@@ -1,0 +1,35 @@
+pipeline {
+  agent {
+    label 'app'
+  }
+  stages {
+    stage('Git Checkout') {
+      steps {
+        checkout scm
+      }
+    }
+
+    stage('Build Docker Image') {
+      parallel {
+        stage('Build Docker Image') {
+          steps {
+         sh 'sudo su'
+            sh 'sudo docker build -t app .'
+//sh 'sudo aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin i-00fe811106a9576c5'
+          sh 'sudo docker tag app:latest i-00fe811106a9576c5/app:${BUILD_NUMBER}'
+          sh 'sudo docker push i-00fe811106a9576c5/app:${BUILD_NUMBER}'      
+          }
+        }
+      }
+    }
+    
+    stage('Deploying App host') {
+      steps {
+        sh 'sudo docker ps'
+      sh 'sudo docker stop apphost'
+      sh 'sudo docker rm apphost'
+        sh 'sudo docker run -itd --name apphost -p 8080:8081 i-00fe811106a9576c5/app:${BUILD_NUMBER}'
+      }
+    }
+  }
+}
