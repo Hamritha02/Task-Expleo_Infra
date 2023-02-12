@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label 'Jenkins'
+    label 'app'
   }
   stages {
     stage('Git Checkout') {
