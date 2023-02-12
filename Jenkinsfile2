@@ -1,5 +1,7 @@
 pipeline {
-  agent any 
+  agent {
+    label 'course-project'
+  }
     
   stages {
     stage('Git Checkout') {
