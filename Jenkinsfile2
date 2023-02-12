@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label 'course-project'
+    label 'app'
   }
     
   stages {
