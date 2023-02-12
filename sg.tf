@@ -1,7 +1,7 @@
-module "jenkins" {
+module "Bastion" {
   source = "terraform-aws-modules/security-group/aws"
 
-  name        = "jenkins-SG"
+  name        = "bastion-SG"
   description = "Security group for ssh for custom ports open in VPC"
   vpc_id      = module.vpc.vpc_id
 
