@@ -1,4 +1,4 @@
-module "Bastion" {
+module "bastion" {
   source = "terraform-aws-modules/security-group/aws"
 
   name        = "bastion-SG"
