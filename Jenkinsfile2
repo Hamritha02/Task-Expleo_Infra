@@ -14,7 +14,7 @@ pipeline {
       parallel {
         stage('Build Docker Image') {
           steps {
-             sh 'su'
+            // sh 'su'
             sh 'docker build -t app .'
           // sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin i-0060cbe10edf4373a'
           sh 'docker tag app:latest 002936919350.dkr.ecr.us-east-1.amazonaws.com/app:${BUILD_NUMBER}'
