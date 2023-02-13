@@ -4,11 +4,11 @@ module "Jenkins" {
 
   name = "Jenkins"
 
-  ami                    = "ami-0aa7d40eeae50c9a9"
+  ami                    = "ami-00874d747dde814fa"
   instance_type          = "t2.micro"
   key_name               = "jen"
   monitoring             = true
-  vpc_security_group_ids = [module.Jenkins.security_group_id]
+  vpc_security_group_ids = [module.jenkins.security_group_id]
   subnet_id              = module.vpc.public_subnets[0]
 
   tags = {
