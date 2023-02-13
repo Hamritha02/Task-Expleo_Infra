@@ -4,7 +4,7 @@ module "Jenkins" {
 
   name = "Jenkins"
 
-  ami                    = "ami-00874d747dde814fa"
+  ami                    = "ami-0aa7d40eeae50c9a9"
   instance_type          = "t2.micro"
   key_name               = "jen"
   monitoring             = true
