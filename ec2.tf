@@ -1,8 +1,8 @@
-module "Node-app" {
+module "node-app" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = "~> 3.0"
 
-  name = "Jenkins"
+  name = "Node-app"
 
   ami                    = "ami-00874d747dde814fa"
   instance_type          = "t2.micro"
