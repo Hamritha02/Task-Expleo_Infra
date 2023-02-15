@@ -12,6 +12,7 @@ module "Node" {
   subnet_id              = module.vpc.public_subnets[0]
 
   tags = {
+    Name = 'New-ec2"
     Terraform   = "true"
     Environment = "dev"
   }
