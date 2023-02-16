@@ -2,7 +2,7 @@ module "Node" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = "~> 3.0"
 
-  name = "Node"
+  name = "Node"  
 
   ami                    = "ami-00874d747dde814fa"
   instance_type          = "t2.micro"
