@@ -3,7 +3,7 @@ module "Node" {
   version = "~> 3.0"
 
   name = "Node-server"  
-
+ 
   ami                    = "ami-00874d747dde814fa"
   instance_type          = "t2.micro"  
   key_name               = "node"
