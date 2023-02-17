@@ -15,10 +15,10 @@ pipeline {
         stage('Build Docker Image') {
           steps {
             //sh 'sudo su'
-            sh 'docker build -t app .'
+            sh 'sudo docker build -t app .'
            sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 002936919350.dkr.ecr.us-east-1.amazonaws.com'
-          sh 'docker tag app:latest 002936919350.dkr.ecr.us-east-1.amazonaws.com/app:${BUILD_NUMBER}'
-          sh 'docker push 002936919350.dkr.ecr.us-east-1.amazonaws.com/app:${BUILD_NUMBER}'      
+          sh 'sudo docker tag app:latest 002936919350.dkr.ecr.us-east-1.amazonaws.com/app:${BUILD_NUMBER}'
+          sh 'sudo docker push 002936919350.dkr.ecr.us-east-1.amazonaws.com/app:${BUILD_NUMBER}'      
           }
         }
       }
@@ -26,10 +26,10 @@ pipeline {
     
     stage('Deploying App host') {
       steps {
-        sh 'docker ps'
-      sh 'docker stop apphost'
-      sh 'docker rm apphost'
-        sh 'docker run -itd --name apphost -p 8080:8081 002936919350.dkr.ecr.us-east-1.amazonaws.com/app:${BUILD_NUMBER}'
+        sh 'sudo docker ps'
+      sh 'sudo docker stop apphost'
+      sh 'sudo docker rm apphost'
+        sh 'sudo docker run -itd --name apphost -p 8080:8081 002936919350.dkr.ecr.us-east-1.amazonaws.com/app:${BUILD_NUMBER}'
       }
     }
   }
