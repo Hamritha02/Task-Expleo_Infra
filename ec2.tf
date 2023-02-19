@@ -4,7 +4,7 @@ module "Node" {
 
   name = "Node-server"  
   
-  ami                    = "ami-00874d747dde814fa"
+  ami                    = var.image_id
   instance_type          = var.instance_type  
   key_name               = "node"
   monitoring             = true
