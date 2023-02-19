@@ -3,7 +3,7 @@ module "Node" {
   version = "~> 3.0"
 
   name = "Node-server"    
-  
+   
   ami                    = var.image_id
   instance_type          = var.instance_type  
   key_name               = "node"
