@@ -7,7 +7,7 @@ terraform {
  }
 }
 
-provider "aws" {
+provider "aws" {  
  region = var.region
  //access_key = "AKIAQBLYN2U3GYAIDWFG"
 // secret_key = "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"
