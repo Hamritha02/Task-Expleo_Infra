@@ -14,9 +14,9 @@ module "Node" {
     create_iam_instance_profile = true
   iam_role_description        = "IAM role for EC2 instance"
   iam_role_policies = {
-    AdministratorAccess = "arn:aws:iam::aws:policy/AdministratorAccess",
-    AmazonEC2FullAccess = "arn:aws:iam::aws:policy/AmazonEC2FullAccess",
-    EC2InstanceProfileForImageBuilderECRContainerBuilds = "arn:aws:iam::aws:policy/EC2InstanceProfileForImageBuilderECRContainerBuilds:,
+    AdministratorAccess = "arn:aws:iam::aws:policy/AdministratorAccess"
+    AmazonEC2FullAccess = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
+    EC2InstanceProfileForImageBuilderECRContainerBuilds = "arn:aws:iam::aws:policy/EC2InstanceProfileForImageBuilderECRContainerBuilds"
     AmazonElasticContainerRegistryPublicFullAccess = "arn:aws:iam::aws:policy/AmazonElasticContainerRegistryPublicFullAccess"
   }
    
