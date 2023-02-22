@@ -28,8 +28,8 @@ module "Node" {
 
   custom_role_policy_arns = [
     "arn:aws:iam::002936919350:role/Task-IAMaccess",
-    "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
-    "arn:aws:iam::aws:policy/EC2InstanceProfileForImageBuilderECRContainerBuilds"
+    "arn:aws:iam::aws:policy/AmazonEC2FullAccess",
+    "arn:aws:iam::aws:policy/EC2InstanceProfileForImageBuilderECRContainerBuilds",
     "arn:aws:iam::aws:policy/AmazonElasticContainerRegistryPublicFullAccess",
   ]
   number_of_custom_role_policy_arns = 4
