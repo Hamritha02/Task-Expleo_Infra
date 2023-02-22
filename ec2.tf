@@ -3,16 +3,7 @@ module "Node" {
   version = "~> 3.0"
 
   name = "Node-server"    
-   # Other instance configuration parameters
   
-  iam_instance_profile = "arn:aws:iam::002936919350:instance-profile/Task-IAMaccess"
-}
-
-
-  role {
-    name = "Task_IAMaccess"
-
-}
   ami                    = var.image_id
   instance_type          = var.instance_type    
   key_name               = "node"
