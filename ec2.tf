@@ -14,7 +14,7 @@ module "Node" {
   tags = {
     Terraform   = "true"
     Environment = "dev"
-  }
+  }   
 }
     
    
