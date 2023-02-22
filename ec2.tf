@@ -15,7 +15,7 @@ module "Node" {
  iam_role_description   = "IAM role for EC2 instance"
  //iam_role_path          = "arn:aws:iam::002936919350:instance-profile/Task-IAMaccess"
    
-  tags = {
+  tags = { 
     Terraform   = "true"
     Environment = "dev"
   }   
