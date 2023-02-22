@@ -8,6 +8,7 @@
       label_order         = ["environment", "name"]
       assume_role_policy  = data.aws_iam_policy_document.default.json
       managed_policy_arns = arn:aws:iam::002936919350:instance-profile/Task-IAMaccess
+  
       policy_enabled      = true
       policy              = data.aws_iam_policy_document.iam-policy.json
     }
