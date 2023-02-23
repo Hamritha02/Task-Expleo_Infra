@@ -7,7 +7,8 @@ module "iam-role" {
       label_order         = ["environment", "name"]
       assume_role_policy  = data.aws_iam_policy_document.default.json
       managed_policy_arns = ["arn:aws:iam::aws:policy/AmazonElasticContainerRegistryPublicFullAccess",
-                             "arn:aws:iam::aws:policy/AdministratorAccess"
+                             "arn:aws:iam::aws:policy/AdministratorAccess",
+                             "arn:aws:iam::aws:policy/EC2InstanceProfileForImageBuilderECRContainerBuilds"
                             ]
       policy_enabled      = true
       policy              = data.aws_iam_policy_document.iam-policy.json
