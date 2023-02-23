@@ -10,20 +10,20 @@ module "Node" {
   monitoring             = true
   vpc_security_group_ids = [module.node-app.security_group_id]
   subnet_id              = module.vpc.public_subnets[0]
-  
-    create_iam_instance_profile = true
-  iam_role_description        = "IAM role for EC2 instance"
-  iam_role_policies = {
-    AdministratorAccess = "arn:aws:iam::aws:policy/AdministratorAccess"
-    AmazonEC2FullAccess = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
-    EC2InstanceProfileForImageBuilderECRContainerBuilds = "arn:aws:iam::aws:policy/EC2InstanceProfileForImageBuilderECRContainerBuilds"
-    AmazonElasticContainerRegistryPublicFullAccess = "arn:aws:iam::aws:policy/AmazonElasticContainerRegistryPublicFullAccess"
-  }
-   
-  tags = { 
+  iam_instance_profile   = "terra-jenkins-instance-profile"
+
+  tags = {
     Terraform   = "true"
     Environment = "dev"
-  }   
+  }
 }
+
+resource "aws_iam_instance_profile""instance-profile" {
+  name = "terra-jenkins-instance-profile"
+  role = module.iam-role.name
+
+  }
+   
+  
     
    
