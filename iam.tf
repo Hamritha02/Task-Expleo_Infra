@@ -12,7 +12,7 @@ module "iam-role" {
                             ]
       policy_enabled      = true
       policy              = data.aws_iam_policy_document.iam-policy.json
-    }
+    } 
 
       data "aws_iam_policy_document" "default" {
       statement {
