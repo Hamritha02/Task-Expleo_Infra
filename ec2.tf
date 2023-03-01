@@ -10,7 +10,7 @@ module "Node" {
   monitoring             = true
   vpc_security_group_ids = [module.node-app.security_group_id]
   subnet_id              = module.vpc.public_subnets[0] 
-  iam_instance_profile   = "terra-jenkins-instance-profile"  
+  iam_instance_profile   = "terra-jenkins-instance-profile"     
 
   tags = {
     Terraform   = "true"
