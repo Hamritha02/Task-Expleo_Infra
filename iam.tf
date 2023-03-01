@@ -24,7 +24,7 @@ module "iam-role" {
       }
       }
     }
-      data "aws_iam_policy_document" "iam-policy" {
+      data "aws_iam_policy_document" "iam-policy" {  
       statement {
       actions = [
       "ecr-public:*",
