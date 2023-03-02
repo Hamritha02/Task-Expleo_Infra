@@ -1,7 +1,7 @@
 module "Node" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = "~> 3.0"
-
+  
   name = "Node-app"    
   
   ami                    = var.image_id
